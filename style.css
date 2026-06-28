@@ -1,0 +1,311 @@
+/* =========================
+   AIRDRAW AI INFINITY PRO
+   STYLE.CSS (PART 1)
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#070b14;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Loading Screen */
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#070b14;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    z-index:9999;
+}
+
+.loader{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:6px solid rgba(255,255,255,.15);
+    border-top:6px solid #00e5ff;
+    animation:spin 1s linear infinite;
+    margin-bottom:20px;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+/* Main App */
+
+#app{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+/* Camera */
+
+video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scaleX(-1);
+    filter:brightness(.7) contrast(1.1);
+}
+
+/* Drawing Canvas */
+
+canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+/* Header */
+
+header{
+    position:absolute;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:95%;
+    height:65px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:18px;
+
+    color:white;
+
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.status{
+    display:flex;
+    gap:18px;
+    font-size:14px;
+}
+
+.status span{
+
+    padding:8px 14px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+}
+
+/* Toolbar */
+
+.toolbar{
+
+    position:absolute;
+
+    top:100px;
+
+    left:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    z-index:100;
+
+}
+
+.toolbar button{
+
+    width:70px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    backdrop-filter:blur(15px);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.toolbar button:hover{
+
+    transform:scale(1.08);
+
+    background:#00d9ff;
+
+    color:black;
+
+}
+
+.toolbar button.active{
+
+    background:#00d9ff;
+
+    color:black;
+
+}
+
+/* Bottom Panel */
+
+.bottomPanel{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:15px 25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    color:white;
+
+    z-index:100;
+
+}
+
+.bottomPanel input[type="range"]{
+
+    width:140px;
+
+}
+
+.bottomPanel input[type="color"]{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header{
+
+height:58px;
+
+padding:0 12px;
+
+}
+
+.logo{
+
+font-size:16px;
+
+}
+
+.status{
+
+display:none;
+
+}
+
+.toolbar{
+
+left:10px;
+
+}
+
+.toolbar button{
+
+width:55px;
+
+height:55px;
+
+font-size:12px;
+
+}
+
+.bottomPanel{
+
+width:95%;
+
+gap:8px;
+
+padding:10px;
+
+flex-wrap:wrap;
+
+}
+
+.bottomPanel input[type="range"]{
+
+width:90px;
+
+}
+
+}
